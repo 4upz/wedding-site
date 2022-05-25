@@ -12,9 +12,9 @@ const pages = [
   { href: '/contact', label: 'Contact' },
 ]
 
-export default function Nav() {
+export default function Header() {
   return (
-    <Flex as="header" justify="space-between" mt="30px" mx="50px">
+    <Flex as="header" justify="space-between" align="center" mt="30px" mx="50px">
       <Heading>♡</Heading>
       <Flex as="nav" gap="50px">
         {pages.map((page) => (
