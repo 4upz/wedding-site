@@ -1,15 +1,14 @@
 import Nav from './nav.js'
+import { Flex } from '@chakra-ui/react'
 
 export default function Layout({ children }) {
-    return (
-        <>
-            <header>
-                <Nav />
-            </header>
-            {children}
-            <footer>
-                <span>Made with 🧡 by Arik Smith</span>
-            </footer>
-        </>
-    )
+  return (
+    <>
+      <Nav />
+      {children}
+      <footer>
+        <Flex justify="center"> Made with 🧡 by Arik Smith</Flex>
+      </footer>
+    </>
+  )
 }
