@@ -5,10 +5,10 @@ const theme = extendTheme({
   styles: {
     global: {
       body: {
-        background: '#FFFFF0', // Ivory
-      }
-    }
-  }
+        background: '#FFFFFF', // Ivory, FFFFF0
+      },
+    },
+  },
 })
 
 export default theme
