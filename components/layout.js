@@ -5,8 +5,8 @@ export default function Layout({ children }) {
   return (
     <>
       <Header />
-      <Box minHeight="calc(100vh - 100px)">{children}</Box>
-      <Flex as="footer" justify="center">
+      <Box minHeight="calc(100vh - 150px)">{children}</Box>
+      <Flex as="footer" justify="center" pb={3}>
         Made with 🧡 by Arik Smith
       </Flex>
     </>
