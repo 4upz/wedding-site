@@ -16,7 +16,7 @@ const pages = [
   { href: '/rsvp', label: 'RSVP' },
   { href: '/gallery', label: 'Gallery' },
   { href: '/registry', label: 'Registry' },
-  { href: '/contact', label: 'Contact' },
+  { href: '/faqs', label: 'Faqs' },
 ]
 
 export default function Header() {
