@@ -23,12 +23,12 @@ export default function Header() {
   const { isOpen, onToggle } = useDisclosure()
   return (
     <Flex as="nav" {...styles.container}>
-      <Heading>♡</Heading>
+      <Heading fontSize="32px">♡</Heading>
       <Flex {...styles.iconContainer}>
         <IconButton
           onClick={onToggle}
           icon={
-            isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} />
+            isOpen ? <CloseIcon w={6} h={6} /> : <HamburgerIcon w={10} h={10} />
           }
           variant="ghost"
           aria-label="Toggle Navigation"
@@ -61,7 +61,7 @@ const styles = {
     display: { base: 'flex', md: 'none' },
     zIndex: 9999,
     position: 'absolute',
-    right: 50,
+    right: 25,
     top: 0,
   },
   navContainer: {

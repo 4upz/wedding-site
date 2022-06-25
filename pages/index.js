@@ -26,10 +26,7 @@ export default function Home() {
 
 const styles = {
   container: {
-    gap: {
-      base: 30,
-      lg: 100,
-    },
+    gap: { base: 30, lg: 100 },
     margin: 'auto',
     pt: 10,
     pb: 30,
@@ -41,52 +38,27 @@ const styles = {
   imageBox: {
     position: 'relative',
     border: 'solid 6px #E6DACE',
-    width: {
-      base: '100%',
-      lg: '40%',
-    },
+    width: { base: '100%', lg: '40%' },
     maxHeight: '100%',
-    mr: {
-      base: 0,
-      lg: '50px',
-    },
+    mr: { base: 0, lg: '50px' },
   },
   imageContainer: {
     position: 'relative',
     background: 'transparent',
     top: { base: '-25px', lg: 0 },
     left: { base: '5%', lg: 0 },
-    width: {
-      base: '90%',
-      lg: '100%',
-    },
-    margin: {
-      sm: 'auto',
-      lg: 0,
-    },
-    py: {
-      base: 0,
-      lg: 5,
-    },
+    width: { base: '90%', lg: '100%' },
+    margin: { sm: 'auto', lg: 0 },
+    py: { base: 0, lg: 5 },
     sx: {
       span: {
         boxShadow: '-20px 20px 20px rgba(0, 0, 0, 0.25)',
-        transform: {
-          sm: 'translate(-50%, 0)',
-          lg: 'unset',
-        },
-        left: {
-          sm: '45%',
-          lg: '30%',
-        },
-        right: {
-          sm: 'unset',
-          lg: 0,
-        },
+        transform: { sm: 'translate(-50%, 0)', lg: 'unset' },
+        left: { sm: '45%', lg: '30%' },
+        right: { sm: 'unset', lg: 0 },
       },
     },
   },
-  // TODO: Center and add shadow
   triangle: {
     display: { base: 'none', md: 'initial' },
     position: 'absolute',
