@@ -6,32 +6,48 @@ import {
   AccordionPanel,
   Box,
   Heading,
+  Link,
 } from '@chakra-ui/react'
 import PageWrapper from '../components/pageWrapper'
+import data from '../data/faq.json'
 
-function faqItem({ question, answer }) {}
+export const getStaticProps = async () => {
+  return {
+    props: {
+      faqData: data,
+    },
+  }
+}
 
-export default function Faqs() {
+function FaqItem({ question, answer }) {
+  return (
+    <AccordionItem>
+      <Heading as="h2">
+        <AccordionButton _expanded={{ bg: '#E6DACE', fontWeight: 'bold' }}>
+          <Box flex="1" textAlign="center">
+            {question}
+          </Box>
+          <AccordionIcon />
+        </AccordionButton>
+      </Heading>
+      <AccordionPanel pb={4} textAlign="center" bg="blackAlpha.50">
+        {answer}{' '}
+        <Link href="https://www.brides.com/story/wedding-dress-code-explained#toc-formal-or-black-tie-optional">
+          Learn More
+        </Link>
+      </AccordionPanel>
+    </AccordionItem>
+  )
+}
+
+export default function Faqs({ faqData }) {
   return (
     <PageWrapper>
       <Heading as="h1">Frequently Asked Questions</Heading>
       <Accordion w="100%">
-        <AccordionItem>
-          <Heading as="h2" size="md">
-            <AccordionButton>
-              <Box flex="1" textAlign="center">
-                How do I get started?
-              </Box>
-              <AccordionIcon />
-            </AccordionButton>
-          </Heading>
-          <AccordionPanel pb={4}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
-          </AccordionPanel>
-        </AccordionItem>
+        {faqData.map((item) => (
+          <FaqItem key={item.question} {...item} />
+        ))}
       </Accordion>
     </PageWrapper>
   )
