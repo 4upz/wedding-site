@@ -8,35 +8,19 @@ export default function StoryTab({ partner }) {
       </Heading>
       <Heading as="h3">♡</Heading>
       <Text>
-        Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-        accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab
-        illo inventore veritatis et quasi architecto beatae vitae dicta sunt
-        explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut
-        odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
-        voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum
-        quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam
-        eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat
-        voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam
-        corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?
-        Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse
-        quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo
-        voluptas nulla pariatur?
+        I was able to easily recognize his physical attractiveness, but had no idea how special he would be to me.
+      It all started as a friendship as Arik and I began to uncover how much we had in common such as valuing family, having similar likes on SoundCloud, similar majors, and (eventually) being a part of the same campus groups.
+      Before I knew it we were talking and seeing each other every day. 
       </Text>
-      <br />
       <Text>
-        Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-        accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab
-        illo inventore veritatis et quasi architecto beatae vitae dicta sunt
-        explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut
-        odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
-        voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum
-        quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam
-        eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat
-        voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam
-        corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?
-        Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse
-        quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo
-        voluptas nulla pariatur?
+        He quickly became the person I wanted to share everything with, but I continued to try and play it cool - unconvincingly claiming we were just good friends.
+      This didn’t faze Arik though. He continued to be present and showed me how things would be if we were dating. 
+      His actions and determination made it clear that the connection we shared was undeniable.
+      We, even though Arik will inaccurately say I, made it official on December 1, 2015.
+      </Text>
+      <Text>
+        Since that moment things have only gotten better.
+      Over the years he has surprised me at open mic nights, written songs about me, coordinated private dinners, and much more; with the cherry on top being the execution of my dream proposal in Hawaii and soon it will be our dream wedding.
       </Text>
     </Flex>
   )

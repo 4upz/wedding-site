@@ -1,6 +1,6 @@
 import { Flex, Stack, Heading, Button, Text, Box } from '@chakra-ui/react'
 import Image from 'next/image'
-import homePic from '../public/us.jpg'
+import homePic from '../public/us2.jpeg'
 
 export default function Home() {
   return (
