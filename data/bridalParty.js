@@ -3,6 +3,7 @@ const roles = {
   bestMan: 'Best Man',
   matron: 'Matron of Honor',
   maid: 'Bridesmaid',
+  jrMaid: 'Jr. Bridesmaid',
   bridesMan: 'Bridesman',
   flower: 'Flower Girl',
 }

@@ -1,4 +1,5 @@
 import {
+  Button,
   Flex,
   Heading,
   IconButton,
@@ -13,10 +14,10 @@ const pages = [
   { href: '/story', label: 'Our Story' },
   { href: '/bridal-party', label: 'Bridal Party' },
   { href: '/location', label: 'Location' },
-  { href: '/rsvp', label: 'RSVP' },
   { href: '/gallery', label: 'Gallery' },
   { href: '/registry', label: 'Registry' },
   { href: '/faqs', label: 'Faqs' },
+  { href: '/rsvp', label: 'RSVP', isCTA: true },
 ]
 
 export default function Header() {
@@ -40,7 +41,13 @@ export default function Header() {
       >
         {pages.map((page) => (
           <NextLink href={page.href} key={page.label}>
-            <Link>{page.label}</Link>
+            {page.isCTA ? (
+              <Button key={page.label} as="a" size="sm" href={page.href}>
+                {page.label}
+              </Button>
+            ) : (
+              <Link>{page.label}</Link>
+            )}
           </NextLink>
         ))}
       </Flex>
