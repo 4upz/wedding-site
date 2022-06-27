@@ -22,6 +22,13 @@ const pages = [
 
 export default function Header() {
   const { isOpen, onToggle } = useDisclosure()
+
+  const handlePageChange = (e) => {
+    if (isOpen) {
+      onToggle()
+    }
+  }
+
   return (
     <Flex as="nav" {...styles.container}>
       <Heading fontSize="32px">♡</Heading>
@@ -42,11 +49,17 @@ export default function Header() {
         {pages.map((page) => (
           <NextLink href={page.href} key={page.label}>
             {page.isCTA ? (
-              <Button key={page.label} as="a" size="sm" href={page.href}>
+              <Button
+                key={page.label}
+                as="a"
+                size="sm"
+                href={page.href}
+                onClick={handlePageChange}
+              >
                 {page.label}
               </Button>
             ) : (
-              <Link>{page.label}</Link>
+              <Link onClick={handlePageChange}>{page.label}</Link>
             )}
           </NextLink>
         ))}

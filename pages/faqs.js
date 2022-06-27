@@ -43,7 +43,9 @@ function FaqItem({ question, answer }) {
 export default function Faqs({ faqData }) {
   return (
     <PageWrapper>
-      <Heading as="h1">Frequently Asked Questions</Heading>
+      <Heading as="h1" textAlign="center">
+        Frequently Asked Questions
+      </Heading>
       <Accordion w="100%">
         {faqData.map((item) => (
           <FaqItem key={item.question} {...item} />

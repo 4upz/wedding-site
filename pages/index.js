@@ -7,7 +7,13 @@ export default function Home() {
       <Box {...styles.imageBox}>
         <Box {...styles.triangle} />
         <Box {...styles.imageContainer}>
-          <Image src="/us2.jpeg" alt="Picture of the couple" {...styles.image} />
+          <Image
+            placeholder="blur"
+            blurDataURL="/us2.jpeg"
+            src="/us2.jpeg"
+            alt="Picture of the couple"
+            {...styles.image}
+          />
         </Box>
       </Box>
       <Stack {...styles.stack}>

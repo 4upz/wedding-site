@@ -5,7 +5,6 @@ import {
   Divider,
   Flex,
   Heading,
-  HStack,
   Stack,
   Text,
   VStack,
@@ -48,7 +47,7 @@ export default function Location() {
           </VStack>
         </Stack>
       </Flex>
-      <HStack>
+      <Stack flexDir={{ base: 'column', large: 'row' }} spacing={6}>
         <Button
           variant="outline"
           as="a"
@@ -62,16 +61,16 @@ export default function Location() {
         <Button variant="outline" size="lg">
           Add to Calendar
         </Button>
-      </HStack>
+      </Stack>
       <Divider />
       <Stack
         px={6}
         spacing={4}
         alignItems="center"
-        direction={{ base: 'column', lg: 'row' }}
+        direction={{ base: 'column-reverse', lg: 'row' }}
         maxW="1200px"
       >
-        <VStack spacing={2}>
+        <VStack spacing={2} mt={{ base: '20px', lg: '0' }}>
           <Container>
             Aside from the beautiful views, we chose our location to curate
             positive vibes and a good time for your entire stay in Cleveland.
