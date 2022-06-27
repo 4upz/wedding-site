@@ -47,7 +47,7 @@ export default function Registry() {
             transition="all 0.2s ease-in-out"
             sx={{
               img: {
-                filter: 'grayscale(80%)',
+                filter: 'grayscale(100%)',
                 transition: 'all 0.2s',
                 _hover: {
                   filter: 'grayscale(0%)',
