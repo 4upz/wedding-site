@@ -1,6 +1,5 @@
 import { Flex, Stack, Heading, Button, Text, Box } from '@chakra-ui/react'
 import Image from 'next/image'
-import homePic from '../public/us2.jpeg'
 
 export default function Home() {
   return (
@@ -8,7 +7,7 @@ export default function Home() {
       <Box {...styles.imageBox}>
         <Box {...styles.triangle} />
         <Box {...styles.imageContainer}>
-          <Image src={homePic} alt="Picture of the couple" {...styles.image} />
+          <Image src="/us2.jpeg" alt="Picture of the couple" {...styles.image} />
         </Box>
       </Box>
       <Stack {...styles.stack}>
