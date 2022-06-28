@@ -1,5 +1,6 @@
 import { Flex, Stack, Heading, Button, Text, Box } from '@chakra-ui/react'
 import Image from 'next/image'
+import NextLink from 'next/link'
 
 export default function Home() {
   return (
@@ -17,12 +18,16 @@ export default function Home() {
         </Box>
       </Box>
       <Stack {...styles.stack}>
-        <Heading as="h1">Arik & Chelsey</Heading>
+        <Heading as="h1" size="3xl">
+          Arik & Chelsey
+        </Heading>
         <Text as="h4">September 4th, 2022</Text>
         <Box>
-          <Button my={6} size="lg">
-            RSVP
-          </Button>
+          <NextLink href="/rsvp">
+            <Button my={6} size="lg" as="a">
+              RSVP
+            </Button>
+          </NextLink>
         </Box>
       </Stack>
     </Flex>

@@ -5,6 +5,7 @@ import {
   AccordionItem,
   AccordionPanel,
   Box,
+  Container,
   Heading,
   Link,
 } from '@chakra-ui/react'
@@ -19,7 +20,7 @@ export const getStaticProps = async () => {
   }
 }
 
-function FaqItem({ question, answer }) {
+function FaqItem({ question, answer, link }) {
   return (
     <AccordionItem>
       <Heading as="h2">
@@ -32,9 +33,13 @@ function FaqItem({ question, answer }) {
       </Heading>
       <AccordionPanel pb={4} textAlign="center" bg="blackAlpha.50">
         {answer}{' '}
-        <Link href="https://www.brides.com/story/wedding-dress-code-explained#toc-formal-or-black-tie-optional">
-          Learn More
-        </Link>
+        {link && (
+          <Container>
+            <Link href={link} color="#C3A786" fontWeight="bold">
+              Learn More
+            </Link>
+          </Container>
+        )}
       </AccordionPanel>
     </AccordionItem>
   )

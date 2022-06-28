@@ -17,6 +17,7 @@
     "dashify": "^2.0.0",
     "firebase": "^9.8.4",
     "firebase-admin": "^11.0.0",
+    "formik": "^2.2.9",
     "framer-motion": "^6",
     "glob": "^8.0.3",
     "next": "12.1.5",
