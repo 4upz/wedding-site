@@ -82,10 +82,9 @@ export default function Location() {
             make your way to the flats to end it.
           </Container>
           <Container>
-            If you are looking for suggestions and are like the soon to be Mr. &
-            Mrs., we love exploring restaurants and good drinks when we are in a
+            If you are looking for suggestions and are like us, we love exploring restaurants and good drinks when we are in a
             new area. Below are some of our favorites, along with honorable
-            mentions of places we’ve yet to try!
+            mentions of places we’ve yet to try! Most are nearby the venue with a few requiring a car.
           </Container>
         </VStack>
         <Image
@@ -119,7 +118,63 @@ export default function Location() {
             If you are looking for something owned by a{' '}
             <span>Cleveland celebrity (MGK)</span>
           </Heading>
-          <Text>Sora</Text>
+          <Text>27 Club Coffee</Text>
+        </VStack>
+        <VStack>
+          <Heading as="h4" size="md">
+          If you are looking for{' '}
+            <span>Frozen Drinks</span>
+          </Heading>
+          <Text>Frozen Daquiri Bar & Restaurant</Text>
+        </VStack>        
+        <VStack>
+          <Heading as="h4" size="md">
+          If you are looking for a{' '}
+            <span>Visual Dining Experience</span>
+          </Heading>
+          <Text>Filter Experience</Text>
+        </VStack>        
+        <VStack>
+          <Heading as="h4" size="md">
+            If you are looking for{' '}
+            <span>Hibachi and Sushi</span>
+          </Heading>
+          <Text>TOMO</Text>
+        </VStack>
+        <VStack>
+          <Heading as="h4" size="md">
+            If you are looking for{' '}
+            <span>Thai Food</span>
+          </Heading>
+          <Text>Bangkok Thai</Text>
+        </VStack>
+        <VStack>
+          <Heading as="h4" size="md">
+            If you are looking for{' '}
+            <span>African Food</span>
+          </Heading>
+          <Text>Afrika Taste and Lounge</Text>
+        </VStack>
+        <VStack>
+          <Heading as="h4" size="md">
+            If you are looking for{' '}
+            <span>Ice Cream</span>
+          </Heading>
+          <Text>Mitchell’s Homemade Ice Cream</Text>
+        </VStack>
+        <VStack>
+          <Heading as="h4" size="md">
+          If you are a gamer looking for {' '}
+            <span>drinks and games instead of food</span>
+          </Heading>
+          <Text>16-Bit Bar + Arcade</Text>
+        </VStack>
+        <VStack>
+          <Heading as="h4" size="md">
+          If you are looking for{' '}
+            <span>boardgames and light food</span>
+          </Heading>
+          <Text>Tabletop Cafe</Text>
         </VStack>
       </Flex>
     </PageWrapper>
