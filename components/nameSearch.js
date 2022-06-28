@@ -9,7 +9,8 @@ import { Field, Form, Formik } from 'formik'
 import axios from 'axios'
 
 export default function NameSearch({ handleNameSearch }) {
-  const handleNameSubmit = async (values, actions) => {
+  // TODO: Refactor this to not be async so that loading works
+  const handleNameSubmit = (values, actions) => {
     axios
       .get('/api/guests', { params: { name: values.name } })
       .then(async (res) => {
@@ -17,9 +18,8 @@ export default function NameSearch({ handleNameSearch }) {
         await handleNameSearch(res.data)
       })
       .catch((error) => {
-        const errorMessage =
-          error.response?.data.message || 'Something went wrong'
-        console.log(error.message)
+        const errorMessage = error.response.data.error || 'Something went wrong'
+        console.log(errorMessage)
         actions.setErrors({ name: errorMessage })
       })
       .finally(() => {
@@ -31,7 +31,7 @@ export default function NameSearch({ handleNameSearch }) {
     let error
     if (!value) {
       error = 'Name is required'
-    } else if (!/^[a-zA-Z]+$/.test(value)) {
+    } else if (!/^[a-zA-Z ]+$/.test(value)) {
       error = 'Name must only contain letters'
     }
     return error
