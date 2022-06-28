@@ -45,6 +45,15 @@ export default function Location() {
             <Text>Veranada Tent - Lago Custom Events</Text>
             <Text>7pm - 11pm</Text>
           </VStack>
+          <VStack>
+            <Heading as="h2" size="lg">
+              Hotel Block
+            </Heading>
+            <Text>Aloft Cleveland Downtown</Text>
+            <Text>September 3 - September 5</Text>
+            <Text>Book <a href="https://www.marriott.com/events/start.mi?id=1631212273160&key=GRP" target="_blank">here</a> for the discounted
+            rate of $189 per night.</Text>
+          </VStack>
         </Stack>
       </Flex>
       <Stack flexDir={{ base: 'column', large: 'row' }} spacing={6}>
