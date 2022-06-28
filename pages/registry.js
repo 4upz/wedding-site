@@ -10,12 +10,12 @@ const registryLinks = [
   },
   {
     name: 'Bed, Bath & Beyond',
-    link: '',
+    link: 'https://www.bedbathandbeyond.com/store/giftregistry/viewregistryguest/551627740?eventType=Wedding',
     logo: '/bedbathbeyond.png',
   },
   {
     name: 'Target',
-    link: '',
+    link: 'https://www.target.com/gift-registry/gift/arikandchelsey',
     logo: '/target.png',
   },
 ]
