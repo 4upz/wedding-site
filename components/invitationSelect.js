@@ -96,6 +96,7 @@ export default function InvitationSelect({
                 isLoading={isSubmitting}
                 type="submit"
                 colorScheme="yellow"
+                size="lg"
               >
                 Continue
               </Button>
@@ -103,6 +104,7 @@ export default function InvitationSelect({
                 colorScheme="yellow"
                 variant="outline"
                 onClick={handleCancel}
+                size="sm"
               >
                 Search Again
               </Button>

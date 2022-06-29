@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import axios from 'axios'
-import { Divider, Heading, HStack, Stack, Text, VStack } from '@chakra-ui/react'
+import { Divider, Heading, Stack } from '@chakra-ui/react'
 import PageWrapper from '../components/pageWrapper'
 import NameSearch from '../components/nameSearch'
 import InvitationSelect from '../components/invitationSelect'
@@ -13,6 +13,14 @@ export default function RSVP() {
   const [nameMatches, setNameMatches] = useState([])
   const [partyOptions, setPartyOptions] = useState([])
   const [party, setParty] = useState({})
+
+  const sortGuestsWithUserFirst = (user, party) => {
+    const guestsExcludingUser = party.guests.filter(
+      (guest) => guest.name !== user,
+    )
+    const guestUser = party.guests.find((guest) => guest.name === user)
+    return [guestUser, ...guestsExcludingUser]
+  }
 
   const handleNameSearch = async (nameMatches) => {
     try {
@@ -30,7 +38,16 @@ export default function RSVP() {
         await axios
           .get(`/api/parties?guestId=${nameMatches[0].id}`)
           .then((res) => {
-            setParty({ user: nameMatches[0].name, partyDetails: res.data })
+            const party = res.data
+            console.log('RESPONSE: ', party)
+            const user = nameMatches[0].name
+            setParty({
+              user,
+              partyDetails: {
+                ...party,
+                guests: sortGuestsWithUserFirst(user, party),
+              },
+            })
           })
         setStep('partyRSVP')
       }
@@ -40,12 +57,23 @@ export default function RSVP() {
   }
 
   const handleUserSelect = (user) => {
+    // Order party with user first in array
+    const partyWithUser = partyOptions.find((option) =>
+      option.guests.some((guest) => guest.name === user),
+    )
+
+    console.log('PARTY WITH USER: ', partyWithUser)
+
     setParty({
       user: user,
-      partyDetails: partyOptions.find((option) =>
-        option.guests.some((guest) => guest.name === user),
-      ),
+      partyDetails: {
+        ...partyWithUser,
+        guests: sortGuestsWithUserFirst(user, partyWithUser),
+      },
     })
+
+    console.log(party.partyDetails)
+
     setStep('partyRSVP')
   }
 
@@ -56,14 +84,14 @@ export default function RSVP() {
       guests: party.partyDetails.guests.map((guest) => {
         const { name } = guest
         const { isAttending, meal } = formPartyData[name]
-        return { name, isAttending, meal, id: guest.id }
+        return { name, isAttending: isAttending === 'true', meal, id: guest.id }
       }),
     }
     axios.put(`/api/parties/${party.partyDetails.id}`, rsvpData).then((res) => {
       console.log(res.data)
-      // Set toast on success
+      // TODO: Set toast on success
       const user = party.user
-      handleCancel('confirmation')
+      handleCancel(null, 'confirmation')
       setParty({
         user,
         partyDetails: rsvpData,
@@ -71,7 +99,7 @@ export default function RSVP() {
     })
   }
 
-  const handleCancel = (alternateStep) => {
+  const handleCancel = (event, alternateStep) => {
     setStep(alternateStep || 'searchName')
     setParty({})
     setPartyOptions([])

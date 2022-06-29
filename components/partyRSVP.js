@@ -26,7 +26,7 @@ export default function PartyRSVP({ party, handleSubmit, handleCancel }) {
   const initialValues = {}
   party.partyDetails.guests.forEach((guest) => {
     const { name, isAttending, meal } = guest
-    initialValues[name] = { isAttending, meal }
+    initialValues[name] = { isAttending: isAttending.toString(), meal }
   })
   const guests = Object.keys(initialValues)
   console.log(initialValues)
@@ -60,9 +60,9 @@ export default function PartyRSVP({ party, handleSubmit, handleCancel }) {
 
       <Formik initialValues={initialValues} onSubmit={handleRSVPSubmit}>
         {({ isSubmitting }) => (
-          <VStack spacing={6} as={Form} maxW="1200px" w="100%">
+          <VStack spacing={8} as={Form} maxW="1200px" w="100%">
             {guests.map((guest) => (
-              <VStack key={guest} spacing={2}>
+              <VStack key={guest} spacing={4}>
                 {Object.keys(initialValues[guest]).map((fieldName) => (
                   <Field key={fieldName} name={`${guest}.${fieldName}`}>
                     {({ field, form }) => (
@@ -111,6 +111,7 @@ export default function PartyRSVP({ party, handleSubmit, handleCancel }) {
                 isLoading={isSubmitting}
                 type="submit"
                 colorScheme="yellow"
+                size="lg"
               >
                 Submit
               </Button>
