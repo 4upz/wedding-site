@@ -7,6 +7,7 @@ import {
 } from '@chakra-ui/react'
 import { Field, Form, Formik } from 'formik'
 import axios from 'axios'
+import { validateName } from '../utils/helpers'
 
 export default function NameSearch({ handleNameSearch }) {
   // TODO: Refactor this to not be async so that loading works
@@ -25,16 +26,6 @@ export default function NameSearch({ handleNameSearch }) {
       .finally(() => {
         actions.setSubmitting(false)
       })
-  }
-
-  const validateName = (value) => {
-    let error
-    if (!value) {
-      error = 'Name is required'
-    } else if (!/^[a-zA-Z ]+$/.test(value)) {
-      error = 'Name must only contain letters'
-    }
-    return error
   }
 
   return (

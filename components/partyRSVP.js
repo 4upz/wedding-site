@@ -14,6 +14,28 @@ import {
 } from '@chakra-ui/react'
 import { Field, Form, Formik } from 'formik'
 import EventInfo from './eventInfo'
+import { validateName } from '../utils/helpers'
+
+function QuestionLabel({ name, user, field }) {
+  const greetings = {
+    [user]: 'you',
+    Guest: 'your guest',
+  }
+
+  if (field === 'meal') {
+    return (
+      <>
+        What meal will <i>{greetings[name] || name}</i> be eating?
+      </>
+    )
+  } else {
+    return (
+      <>
+        Will <i>{greetings[name] || name}</i> be attending?
+      </>
+    )
+  }
+}
 
 export default function PartyRSVP({ party, handleSubmit, handleCancel }) {
   const handleRSVPSubmit = (values, action) => {
@@ -29,11 +51,8 @@ export default function PartyRSVP({ party, handleSubmit, handleCancel }) {
     initialValues[name] = { isAttending: isAttending.toString(), meal }
   })
   const guests = Object.keys(initialValues)
-  console.log(initialValues)
-
-  const fieldQuestions = {
-    isAttending: (name) => `Will ${name} be attending?`,
-    meal: (name) => `What meal will ${name} be eating?`,
+  if (guests.includes('Guest')) {
+    initialValues.guestName = ''
   }
 
   const fieldOptions = {
@@ -51,7 +70,8 @@ export default function PartyRSVP({ party, handleSubmit, handleCancel }) {
   return (
     <>
       <Heading as="h4" size="lg">
-        Hello, {party.user}!
+        {party.partyDetails.hasResponded ? 'Welcome back' : 'Hello'},{' '}
+        {party.user}!
       </Heading>
       <Text>
         Please select who is coming from your household and their desired meal.
@@ -63,6 +83,28 @@ export default function PartyRSVP({ party, handleSubmit, handleCancel }) {
           <VStack spacing={8} as={Form} maxW="1200px" w="100%">
             {guests.map((guest) => (
               <VStack key={guest} spacing={4}>
+                {guest === 'Guest' && (
+                  <Field name="guestName" validate={validateName}>
+                    {({ field, form }) => (
+                      <FormControl
+                        isInvalid={
+                          form.errors.guestName && form.touched.guestName
+                        }
+                      >
+                        <Input
+                          {...field}
+                          placeholder="Enter a name for your guest"
+                          textAlign="center"
+                          type="text"
+                          id="guestName"
+                        />
+                        <FormErrorMessage justifyContent="center">
+                          {form.errors.name}
+                        </FormErrorMessage>
+                      </FormControl>
+                    )}
+                  </Field>
+                )}
                 {Object.keys(initialValues[guest]).map((fieldName) => (
                   <Field key={fieldName} name={`${guest}.${fieldName}`}>
                     {({ field, form }) => (
@@ -73,7 +115,11 @@ export default function PartyRSVP({ party, handleSubmit, handleCancel }) {
                         }
                       >
                         <FormLabel mr={0}>
-                          {fieldQuestions[fieldName](guest)}
+                          <QuestionLabel
+                            name={guest}
+                            user={party.user}
+                            field={fieldName}
+                          />
                         </FormLabel>
                         <RadioGroup
                           {...field}

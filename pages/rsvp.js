@@ -62,8 +62,6 @@ export default function RSVP() {
       option.guests.some((guest) => guest.name === user),
     )
 
-    console.log('PARTY WITH USER: ', partyWithUser)
-
     setParty({
       user: user,
       partyDetails: {
@@ -78,12 +76,14 @@ export default function RSVP() {
   }
 
   const handleRSVPSubmit = async (formPartyData) => {
-    console.log(formPartyData)
     const rsvpData = {
       hasResponded: true,
       guests: party.partyDetails.guests.map((guest) => {
-        const { name } = guest
+        let { name } = guest
         const { isAttending, meal } = formPartyData[name]
+        if (name === 'Guest' && formPartyData.guestName.trim()) {
+          name = formPartyData.guestName.trim()
+        }
         return { name, isAttending: isAttending === 'true', meal, id: guest.id }
       }),
     }
