@@ -33,6 +33,6 @@ export default function Story() {
 
 const styles = {
   tabTitle: {
-    fontSize: '32px',
+    fontSize: '24px',
   },
 }

@@ -40,6 +40,7 @@ export default function Header() {
           }
           variant="ghost"
           aria-label="Toggle Navigation"
+          boxShadow="none"
         />
       </Flex>
       <Flex
@@ -47,7 +48,7 @@ export default function Header() {
         {...styles.navContainer}
       >
         {pages.map((page) => (
-          <NextLink href={page.href} key={page.label}>
+          <NextLink href={page.href} key={page.label} passHref>
             {page.isCTA ? (
               <Button
                 key={page.label}

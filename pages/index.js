@@ -1,42 +1,64 @@
-import { Flex, Stack, Heading, Button, Text, Box } from '@chakra-ui/react'
+import { Flex, Stack, Heading, Button, Text, Box, Fade } from '@chakra-ui/react'
 import Image from 'next/image'
 import NextLink from 'next/link'
 
 export default function Home() {
+  const variants = {
+    hidden: { opacity: 0, x: 0, y: 0 },
+    enter: { opacity: 1, x: 0, y: 0 },
+    exit: { opacity: 0, x: 0, y: -100 },
+  }
+
   return (
-    <Flex {...styles.container}>
-      <Box {...styles.imageBox}>
-        <Box {...styles.triangle} />
-        <Box {...styles.imageContainer}>
-          <Image
-            placeholder="blur"
-            blurDataURL="/us2.jpeg"
-            src="/us2.jpeg"
-            alt="Picture of the couple"
-            {...styles.image}
-          />
+    <Fade variants={variants} {...styles.animated}>
+      <Flex {...styles.container}>
+        <Box {...styles.imageBox}>
+          <Box {...styles.triangle} />
+          <Box {...styles.imageContainer}>
+            <Image
+              placeholder="blur"
+              blurDataURL="/us2.jpeg"
+              src="/us2.jpeg"
+              alt="Picture of the couple"
+              {...styles.image}
+            />
+          </Box>
         </Box>
-      </Box>
-      <Stack {...styles.stack}>
-        <Heading as="h1" fontSize={{ base: '56px', lg: '108px' }}>
-          Arik & Chelsey
-        </Heading>
-        <Text as="h4" {...styles.subtitle}>
-          September <span>4th</span>, 2022
-        </Text>
-        <Box>
-          <NextLink href="/rsvp">
-            <Button my={6} size="lg" as="a">
-              RSVP
-            </Button>
-          </NextLink>
-        </Box>
-      </Stack>
-    </Flex>
+        <Stack {...styles.stack}>
+          <Heading as="h1" fontSize={{ base: '56px', lg: '108px' }}>
+            Arik & Chelsey
+          </Heading>
+          <Text as="h4" {...styles.subtitle}>
+            September <span>4th</span>, 2022
+          </Text>
+          <Box>
+            <NextLink href="/rsvp">
+              <Button
+                my={6}
+                size="lg"
+                as="a"
+                cursor="pointer"
+                w={{ base: '100px', lg: '150px' }}
+                h={{ base: '50px', lg: '70px' }}
+                fontSize={{ base: '24px', lg: '32px' }}
+              >
+                RSVP
+              </Button>
+            </NextLink>
+          </Box>
+        </Stack>
+      </Flex>
+    </Fade>
   )
 }
 
 const styles = {
+  animated: {
+    initial: 'hidden',
+    animate: 'enter',
+    exit: 'exit',
+    transition: { type: 'linear' },
+  },
   subtitle: {
     fontSize: { base: '24px', md: '36px' },
     sx: {
@@ -44,6 +66,7 @@ const styles = {
         fontWeight: 'bold',
         fontFamily: 'heading',
         fontSize: { base: '36px', md: '48px' },
+        letterSpacing: '6px',
       },
     },
   },

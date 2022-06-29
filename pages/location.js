@@ -5,6 +5,7 @@ import {
   Divider,
   Flex,
   Heading,
+  Link,
   Stack,
   Text,
   VStack,
@@ -13,6 +14,9 @@ import Image from 'next/image'
 import PageWrapper from '../components/pageWrapper'
 
 export default function Location() {
+  const calendarTemplateLink =
+    'https://www.google.com/calendar/event?action=TEMPLATE&dates=20220904T203000Z%2F20220904T214500Z&text=Arik%20%26%20Chelsey%20Wedding&location=Lago%20Custom%20Events%2C%20950%20Main%20Ave%20%23120%2C%20Cleveland%2C%20OH%2044113%2C%20USA&details='
+
   return (
     <PageWrapper>
       <Heading as="h1">Location</Heading>
@@ -52,31 +56,44 @@ export default function Location() {
             <Text>Aloft Cleveland Downtown</Text>
             <Text>September 3 - September 5</Text>
             <Text>
-              Book{' '}
-              <a
+              <Link
                 href="https://www.marriott.com/events/start.mi?id=1631212273160&key=GRP"
                 target="_blank"
                 rel="noreferrer"
+                color="brand.dark"
+                fontWeight="bold"
               >
-                here
-              </a>{' '}
+                Book here
+              </Link>{' '}
               for the discounted rate of $189 per night.
             </Text>
           </VStack>
         </Stack>
       </Flex>
-      <Stack flexDir={{ base: 'column', large: 'row' }} spacing={6}>
+      <Stack
+        alignItems="center"
+        direction={{ base: 'column', lg: 'row' }}
+        spacing={6}
+      >
         <Button
           variant="outline"
           as="a"
           href="https://goo.gl/maps/97o3HLZab1cbaxtGA"
           target="_blank"
+          rel="noreferrer"
           size="lg"
         >
           Map
         </Button>
         {/* TODO: Create ICS file or Google Calendar link for this, if this feature is desired*/}
-        <Button variant="outline" size="lg">
+        <Button
+          as="a"
+          href={calendarTemplateLink}
+          variant="outline"
+          size="lg"
+          target="_blank"
+          rel="noreferrer"
+        >
           Add to Calendar
         </Button>
       </Stack>
