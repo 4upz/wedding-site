@@ -23,7 +23,7 @@ export const getStaticProps = async () => {
 function FaqItem({ question, answer, link }) {
   return (
     <AccordionItem>
-      <Heading as="h2">
+      <Heading as="h2" fontFamily="body">
         <AccordionButton _expanded={{ bg: '#E6DACE', fontWeight: 'bold' }}>
           <Box flex="1" textAlign="center">
             {question}

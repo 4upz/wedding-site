@@ -51,8 +51,17 @@ export default function Location() {
             </Heading>
             <Text>Aloft Cleveland Downtown</Text>
             <Text>September 3 - September 5</Text>
-            <Text>Book <a href="https://www.marriott.com/events/start.mi?id=1631212273160&key=GRP" target="_blank">here</a> for the discounted
-            rate of $189 per night.</Text>
+            <Text>
+              Book{' '}
+              <a
+                href="https://www.marriott.com/events/start.mi?id=1631212273160&key=GRP"
+                target="_blank"
+                rel="noreferrer"
+              >
+                here
+              </a>{' '}
+              for the discounted rate of $189 per night.
+            </Text>
           </VStack>
         </Stack>
       </Flex>
@@ -91,9 +100,11 @@ export default function Location() {
             make your way to the flats to end it.
           </Container>
           <Container>
-            If you are looking for suggestions and are like us, we love exploring restaurants and good drinks when we are in a
-            new area. Below are some of our favorites, along with honorable
-            mentions of places we’ve yet to try! Most are nearby the venue with a few requiring a car.
+            If you are looking for suggestions and are like us, we love
+            exploring restaurants and good drinks when we are in a new area.
+            Below are some of our favorites, along with honorable mentions of
+            places we’ve yet to try! Most are nearby the venue with a few
+            requiring a car.
           </Container>
         </VStack>
         <Image
@@ -131,57 +142,50 @@ export default function Location() {
         </VStack>
         <VStack>
           <Heading as="h4" size="md">
-          If you are looking for{' '}
-            <span>Frozen Drinks</span>
+            If you are looking for <span>Frozen Drinks</span>
           </Heading>
           <Text>Frozen Daquiri Bar & Restaurant</Text>
-        </VStack>        
+        </VStack>
         <VStack>
           <Heading as="h4" size="md">
-          If you are looking for a{' '}
-            <span>Visual Dining Experience</span>
+            If you are looking for a <span>Visual Dining Experience</span>
           </Heading>
           <Text>Filter Experience</Text>
-        </VStack>        
+        </VStack>
         <VStack>
           <Heading as="h4" size="md">
-            If you are looking for{' '}
-            <span>Hibachi and Sushi</span>
+            If you are looking for <span>Hibachi and Sushi</span>
           </Heading>
           <Text>TOMO</Text>
         </VStack>
         <VStack>
           <Heading as="h4" size="md">
-            If you are looking for{' '}
-            <span>Thai Food</span>
+            If you are looking for <span>Thai Food</span>
           </Heading>
           <Text>Bangkok Thai</Text>
         </VStack>
         <VStack>
           <Heading as="h4" size="md">
-            If you are looking for{' '}
-            <span>African Food</span>
+            If you are looking for <span>African Food</span>
           </Heading>
           <Text>Afrika Taste and Lounge</Text>
         </VStack>
         <VStack>
           <Heading as="h4" size="md">
-            If you are looking for{' '}
-            <span>Ice Cream</span>
+            If you are looking for <span>Ice Cream</span>
           </Heading>
           <Text>Mitchell’s Homemade Ice Cream</Text>
         </VStack>
         <VStack>
           <Heading as="h4" size="md">
-          If you are a gamer looking for {' '}
+            If you are a gamer looking for{' '}
             <span>drinks and games instead of food</span>
           </Heading>
           <Text>16-Bit Bar + Arcade</Text>
         </VStack>
         <VStack>
           <Heading as="h4" size="md">
-          If you are looking for{' '}
-            <span>boardgames and light food</span>
+            If you are looking for <span>boardgames and light food</span>
           </Heading>
           <Text>Tabletop Cafe</Text>
         </VStack>
@@ -258,6 +262,9 @@ const styles = {
     justifyContent: 'center',
     padding: { base: 6, lg: 'none' },
     sx: {
+      h4: {
+        fontFamily: 'body',
+      },
       span: {
         color: '#C3A786',
       },

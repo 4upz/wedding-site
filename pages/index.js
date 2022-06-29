@@ -18,10 +18,12 @@ export default function Home() {
         </Box>
       </Box>
       <Stack {...styles.stack}>
-        <Heading as="h1" size="3xl">
+        <Heading as="h1" fontSize={{ base: '56px', lg: '108px' }}>
           Arik & Chelsey
         </Heading>
-        <Text as="h4">September 4th, 2022</Text>
+        <Text as="h4" {...styles.subtitle}>
+          September <span>4th</span>, 2022
+        </Text>
         <Box>
           <NextLink href="/rsvp">
             <Button my={6} size="lg" as="a">
@@ -35,6 +37,16 @@ export default function Home() {
 }
 
 const styles = {
+  subtitle: {
+    fontSize: { base: '24px', md: '36px' },
+    sx: {
+      span: {
+        fontWeight: 'bold',
+        fontFamily: 'heading',
+        fontSize: { base: '36px', md: '48px' },
+      },
+    },
+  },
   container: {
     gap: { base: 30, lg: 100 },
     margin: 'auto',

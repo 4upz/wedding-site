@@ -28,6 +28,7 @@ const styles = {
     textTransform: 'uppercase',
     size: 'md',
     letterSpacing: '2px',
+    fontFamily: 'body',
   },
   partyItem: {
     flexDir: ['column'],
