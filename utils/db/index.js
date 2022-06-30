@@ -1,6 +1,7 @@
 import admin from 'firebase-admin'
 // import { getAnalytics } from 'firebase/analytics'
-import serviceAccount from './serviceAccountKey.json'
+
+const serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT_KEY)
 
 if (!admin.apps.length) {
   try {

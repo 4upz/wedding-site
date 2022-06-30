@@ -27,7 +27,7 @@ export default function InvitationSelect({
   // TODO: Refactor this abomination
   const getGuestPartyNames = (guest, party) => {
     // Return comma separated list of party names for each guest
-    let display = party.length > 2 ? '- ' : ''
+    let display = party.length > 1 ? '- ' : ''
     party.map((partyMember, index) => {
       if (guest.name !== partyMember.name) {
         display += partyMember.name
@@ -47,7 +47,9 @@ export default function InvitationSelect({
 
   return (
     <>
-      <Heading as="h3">Your name has been found in the guest list!</Heading>
+      <Heading as="h3" fontFamily="body" fontWeight="bold">
+        Your name has been found in the guest list!
+      </Heading>
       <Text>
         Please confirm your name and party below to continue your rsvp.
       </Text>

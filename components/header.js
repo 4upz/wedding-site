@@ -11,7 +11,7 @@ import NextLink from 'next/link'
 
 const pages = [
   { href: '/', label: 'Home' },
-  { href: '/story', label: 'Our Story' },
+  // { href: '/story', label: 'Our Story' },
   { href: '/bridal-party', label: 'Bridal Party' },
   { href: '/location', label: 'Location' },
   { href: '/gallery', label: 'Gallery' },
