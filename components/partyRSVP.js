@@ -11,6 +11,7 @@ import {
   RadioGroup,
   Text,
   Stack,
+  Badge,
 } from '@chakra-ui/react'
 import { Field, Form, Formik } from 'formik'
 import EventInfo from './eventInfo'
@@ -25,13 +26,13 @@ function QuestionLabel({ name, user, field }) {
   if (field === 'meal') {
     return (
       <>
-        What meal will <i>{greetings[name] || name}</i> be eating?
+        What meal will <span>{greetings[name] || name}</span> be eating?
       </>
     )
   } else {
     return (
       <>
-        Will <i>{greetings[name] || name}</i> be attending?
+        Will <span>{greetings[name] || name}</span> be attending?
       </>
     )
   }
@@ -61,9 +62,9 @@ export default function PartyRSVP({ party, handleSubmit, handleCancel }) {
       { value: 'false', label: 'No' },
     ],
     meal: [
-      { value: 'chicken', label: 'Chicken' },
-      { value: 'fish', label: 'Fish' },
-      { value: 'vegetarian', label: 'Vegetarian' },
+      { value: 'steak', label: 'Steak' },
+      { value: 'salmon', label: 'Salmon' },
+      { value: 'vegetarian', label: 'Ratatouille', isVeggie: true },
     ],
   }
 
@@ -114,7 +115,12 @@ export default function PartyRSVP({ party, handleSubmit, handleCancel }) {
                           form.errors[fieldName] && form.touched[fieldName]
                         }
                       >
-                        <FormLabel mr={0}>
+                        <FormLabel
+                          mr={0}
+                          sx={{
+                            span: { color: 'brand.dark', fontWeight: 'bold' },
+                          }}
+                        >
                           <QuestionLabel
                             name={guest}
                             user={party.user}
@@ -132,7 +138,12 @@ export default function PartyRSVP({ party, handleSubmit, handleCancel }) {
                                 {...field}
                                 value={option.value}
                               >
-                                {option.label}
+                                {option.label}{' '}
+                                {option.isVeggie && (
+                                  <Badge colorScheme="green" mb="3px">
+                                    v
+                                  </Badge>
+                                )}
                               </Radio>
                             ))}
                           </HStack>

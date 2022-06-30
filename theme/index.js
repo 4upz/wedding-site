@@ -34,6 +34,12 @@ const theme = extendTheme({
         },
         outline: {
           border: 'solid 3px #E6DACE',
+          color: 'brand.dark',
+          _hover: {
+            bg: 'red.500',
+            borderColor: 'red.500',
+            color: 'white',
+          },
         },
       },
     },
