@@ -1,6 +1,6 @@
 import db from '../../../utils/db'
 
-export default async (req, res) => {
+export default async function handler(req, res) {
   switch (req.method) {
     case 'PUT':
       updateParty(req, res)

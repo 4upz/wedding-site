@@ -8,7 +8,6 @@ import {
   RadioGroup,
   Stack,
   Text,
-  HStack,
   VStack,
 } from '@chakra-ui/react'
 import { Field, Form, Formik } from 'formik'
@@ -27,21 +26,25 @@ export default function InvitationSelect({
   // TODO: Refactor this abomination
   const getGuestPartyNames = (guest, party) => {
     // Return comma separated list of party names for each guest
-    let display = party.length > 1 ? '- ' : ''
-    party.map((partyMember, index) => {
-      if (guest.name !== partyMember.name) {
-        display += partyMember.name
-      }
-      if (party.length > 2) {
-        if (index < party.length - 2) {
-          display += ', '
-        }
-        if (index === party.length - 2) {
-          display += ' & '
-        }
-      }
-      return display
-    })
+    let display = party
+      .map((guest) => {
+        if (guest.name !== guest) return guest.name
+      })
+      .join(', ')
+    // party.map((partyMember, index) => {
+    //   if (guest.name !== partyMember.name) {
+    //     display += partyMember.name
+    //   }
+    //   if (party.length > 2) {
+    //     if (index < party.length - 2) {
+    //       display += ', '
+    //     }
+    //     if (index === party.length - 2) {
+    //       display += ' & '
+    //     }
+    //   }
+    //   return display
+    // })
     return display
   }
 
@@ -63,21 +66,26 @@ export default function InvitationSelect({
                   isInvalid={form.errors.party && form.touched.party}
                 >
                   <RadioGroup my={6} {...field} id="party">
-                    <VStack spacing={2}>
+                    <VStack spacing={6}>
                       {nameMatches.map((match, index) => (
-                        <Radio {...field} key={match.id} value={match.name}>
-                          <HStack spacing={2}>
-                            <Heading as="h4" size="small">
+                        <Stack
+                          key={match.id}
+                          spacing={2}
+                          alignItems="center"
+                          direction="column"
+                        >
+                          <Radio {...field} value={match.name}>
+                            <Heading as="h4" size="md">
                               {match.name}
                             </Heading>
-                            <Text>
-                              {getGuestPartyNames(
-                                match,
-                                partyOptions[index].guests,
-                              )}
-                            </Text>
-                          </HStack>
-                        </Radio>
+                          </Radio>
+                          <Text color="blackAlpha.700">
+                            {getGuestPartyNames(
+                              match,
+                              partyOptions[index].guests,
+                            )}
+                          </Text>
+                        </Stack>
                       ))}
                     </VStack>
                   </RadioGroup>

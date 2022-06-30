@@ -39,7 +39,6 @@ export default function RSVP() {
           .get(`/api/parties?guestId=${nameMatches[0].id}`)
           .then((res) => {
             const party = res.data
-            console.log('RESPONSE: ', party)
             const user = nameMatches[0].name
             setParty({
               user,

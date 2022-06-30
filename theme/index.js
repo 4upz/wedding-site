@@ -40,6 +40,9 @@ const theme = extendTheme({
             borderColor: 'red.500',
             color: 'white',
           },
+          _active: {
+            bg: 'red.500',
+          },
         },
       },
     },

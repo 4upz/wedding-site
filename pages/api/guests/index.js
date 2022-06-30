@@ -1,6 +1,6 @@
 import db from '../../../utils/db'
 
-export default async (req, res) => {
+export default async function handler(req, res) {
   switch (req.method) {
     case 'GET':
       if (req.query.name) {
@@ -37,7 +37,7 @@ const getGuestsByName = async (req, res) => {
       guest.name.toLowerCase().includes(name),
     )
     if (matchingGuests.length === 0) {
-      res.status(404).json({ error: 'No invitation with that name was found.' })
+      res.status(500).json({ error: 'No invitation with that name was found.' })
     }
     res.status(200).json(matchingGuests)
   } catch (error) {

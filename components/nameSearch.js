@@ -15,7 +15,6 @@ export default function NameSearch({ handleNameSearch }) {
     axios
       .get('/api/guests', { params: { name: values.name } })
       .then(async (res) => {
-        console.log(res.data)
         await handleNameSearch(res.data)
       })
       .catch((error) => {
