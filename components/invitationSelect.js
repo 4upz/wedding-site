@@ -98,7 +98,6 @@ export default function InvitationSelect({
             <Stack
               alignItems="center"
               justifyContent="center"
-              direction={{ base: 'column', lg: 'row' }}
               spacing={3}
               mt={3}
             >
@@ -111,8 +110,8 @@ export default function InvitationSelect({
                 Continue
               </Button>
               <Button
-                colorScheme="yellow"
-                variant="outline"
+                colorScheme="red"
+                variant="ghost"
                 onClick={handleCancel}
                 size="sm"
               >

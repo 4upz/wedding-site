@@ -160,7 +160,6 @@ export default function PartyRSVP({ party, handleSubmit, handleCancel }) {
             <Stack
               alignItems="center"
               justifyContent="center"
-              direction={{ base: 'column', lg: 'row' }}
               spacing={3}
               mt={3}
             >
@@ -173,8 +172,8 @@ export default function PartyRSVP({ party, handleSubmit, handleCancel }) {
                 Submit
               </Button>
               <Button
-                colorScheme="yellow"
-                variant="outline"
+                colorScheme="red"
+                variant="ghost"
                 onClick={handleCancel}
               >
                 Cancel

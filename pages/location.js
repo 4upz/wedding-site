@@ -46,7 +46,7 @@ export default function Location() {
             <Heading as="h2" size="lg">
               Reception
             </Heading>
-            <Text>Veranada Tent - Lago Custom Events</Text>
+            <Text>Veranda Tent - Lago Custom Events</Text>
             <Text>7pm - 11pm</Text>
           </VStack>
           <VStack>
@@ -55,7 +55,7 @@ export default function Location() {
             </Heading>
             <Text>Aloft Cleveland Downtown</Text>
             <Text>September 3 - September 5</Text>
-            <Text>
+            <Text textAlign="center">
               <Link
                 href="https://www.marriott.com/events/start.mi?id=1631212273160&key=GRP"
                 target="_blank"
@@ -85,7 +85,6 @@ export default function Location() {
         >
           Map
         </Button>
-        {/* TODO: Create ICS file or Google Calendar link for this, if this feature is desired*/}
         <Button
           as="a"
           href={calendarTemplateLink}
