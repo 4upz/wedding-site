@@ -27,7 +27,9 @@ export default function RSVP() {
       if (nameMatches.length > 1) {
         const partyOptions = []
         for (const name of nameMatches) {
-          await axios.get(`/api/parties?guestId=${name.id}`).then((res) => {
+          await axios.get(`/api/parties?guestId=${name.id}`, {headers: {
+            'Content-Type': 'application/json',
+            }}).then((res) => {
             partyOptions.push(res.data)
           })
         }
