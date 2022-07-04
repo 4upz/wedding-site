@@ -28,7 +28,6 @@ const getAllGuests = async (req, res) => {
 
 const getGuestsByName = async (req, res) => {
   const name = req.query.name.trim().toLowerCase()
-
   try {
     // Search for guests in firestore with name containing the query string
     const guests = await db.collection('guests').get()
@@ -37,7 +36,7 @@ const getGuestsByName = async (req, res) => {
       guest.name.toLowerCase().includes(name),
     )
     if (matchingGuests.length === 0) {
-      res.status(500).json({ error: 'No invitation with that name was found.' })
+      res.status(404).send({ error: 'No invitation with that name was found.' })
     }
     res.status(200).json(matchingGuests)
   } catch (error) {
