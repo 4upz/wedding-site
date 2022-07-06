@@ -10,7 +10,6 @@ import axios from 'axios'
 import { validateName } from '../utils/helpers'
 
 export default function NameSearch({ handleNameSearch }) {
-  // TODO: Refactor this to not be async so that loading works
   const handleNameSubmit = (values, actions) => {
     axios
       .get('/api/guests', { params: { name: values.name } })

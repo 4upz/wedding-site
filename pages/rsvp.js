@@ -28,7 +28,8 @@ export default function RSVP() {
         const partyOptions = []
         for (const name of nameMatches) {
           await axios.get(`/api/parties?guestId=${name.id}`, {headers: {
-            'Content-Type': 'application/json',
+              'Accept': 'application/json',
+              'Content-Type': 'application/json',
             }}).then((res) => {
             partyOptions.push(res.data)
           })
