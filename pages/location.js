@@ -24,7 +24,7 @@ export default function Location() {
         <Box {...styles.imageBox}>
           <Box {...styles.triangle} />
           <Box {...styles.imageContainer}>
-            <Image src="/lago.webp" alt="Lago East Bank" {...styles.image} />
+            <Image src="/penthouse.jpeg" alt="Lago East Bank" {...styles.image} />
           </Box>
         </Box>
         <Stack {...styles.events}>
@@ -124,7 +124,7 @@ export default function Location() {
           </Container>
         </VStack>
         <Image
-          src="/theflats.jpeg"
+          src="/flats.jpeg"
           alt="The Flats in Cleveland"
           {...styles.flatsImage}
         />
