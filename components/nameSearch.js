@@ -17,8 +17,8 @@ export default function NameSearch({ handleNameSearch }) {
         await handleNameSearch(res.data)
       })
       .catch((error) => {
-        const errorMessage = error.response.data.error || 'Something went wrong'
-        console.log(errorMessage)
+        console.log(error.response)
+        const errorMessage = error.response.status === 404 ? 'No invitation with that name was found.' : 'Something went wrong.'
         actions.setErrors({ name: errorMessage })
       })
       .finally(() => {

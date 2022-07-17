@@ -31,7 +31,9 @@ export default function Header() {
 
   return (
     <Flex as="nav" {...styles.container}>
-      <Heading fontSize="32px">♡</Heading>
+      <NextLink href="/">
+        <Heading as="a" {...styles.icon}>♡</Heading>
+      </NextLink>
       <Flex {...styles.iconContainer}>
         <IconButton
           onClick={onToggle}
@@ -84,6 +86,14 @@ const styles = {
     position: 'absolute',
     right: 25,
     top: 0,
+  },
+  icon: {
+    fontSize: '32px',
+    transition: 'all 0.2s ease-in-out',
+    _hover: {
+      cursor: 'pointer',
+      color: 'brand.dark',
+    }
   },
   navContainer: {
     flexDirection: { base: 'column', md: 'row' },
