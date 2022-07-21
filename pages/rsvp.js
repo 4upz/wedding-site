@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import axios from 'axios'
-import { Divider, Heading, Stack } from '@chakra-ui/react'
+import {Divider, Heading, Stack, useToast} from '@chakra-ui/react'
 import PageWrapper from '../components/pageWrapper'
 import NameSearch from '../components/nameSearch'
 import InvitationSelect from '../components/invitationSelect'
@@ -13,6 +13,8 @@ export default function RSVP() {
   const [nameMatches, setNameMatches] = useState([])
   const [partyOptions, setPartyOptions] = useState([])
   const [party, setParty] = useState({})
+
+  const toast = useToast()
 
   const sortGuestsWithUserFirst = (user, party) => {
     const guestsExcludingUser = party.guests.filter(
@@ -90,8 +92,13 @@ export default function RSVP() {
       }),
     }
     axios.put(`/api/parties/${party.partyDetails.id}`, rsvpData).then((res) => {
-      console.log(res.data)
-      // TODO: Set toast on success
+      toast({
+        title: 'RSVP Successful',
+        description: 'Your RSVP has been submitted successfully.',
+        status: 'success',
+        duration: 9000,
+        isClosable: true,
+      })
       const user = party.user
       handleCancel(null, 'confirmation')
       setParty({

@@ -1,4 +1,5 @@
 import {
+  Alert, AlertIcon,
   Box,
   Button,
   FormControl,
@@ -49,13 +50,18 @@ export default function NameSearch({ handleNameSearch }) {
             )}
           </Field>
           <Button
-            mt={4}
+            mt={6}
             isLoading={isSubmitting}
             type="submit"
             colorScheme="yellow"
+            size="lg"
           >
             Find Invitation
           </Button>
+          <Alert status="warning" variant="subtle" rounded="lg" mt={6}>
+            <AlertIcon />
+            Deadline to RSVP is August 1st!
+          </Alert>
         </Box>
       )}
     </Formik>

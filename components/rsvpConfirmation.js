@@ -8,7 +8,7 @@ export default function RSVPConfirmation({ party }) {
       <Heading as="h2" size="lg">
         Thank you, {party.user}!
       </Heading>
-      <Heading as="h3" size="md">
+      <Heading as="h3" size="md" fontFamily="body">
         Your RSVP has been confirmed!
       </Heading>
       <Text>
