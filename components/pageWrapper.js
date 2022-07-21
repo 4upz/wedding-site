@@ -20,7 +20,7 @@ export default function PageWrapper({ children, customStyles }) {
       exit="exit" // Exit state (used later) to variants.exit
       transition={{ type: 'linear' }} // Set the transition to linear
     >
-      <Flex {...wrapperStyles}>{children}</Flex>{' '}
+      <Flex {...wrapperStyles}>{children}</Flex>
     </Fade>
   )
 }
