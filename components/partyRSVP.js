@@ -171,11 +171,7 @@ export default function PartyRSVP({ party, handleSubmit, handleCancel }) {
               >
                 Submit
               </Button>
-              <Button
-                colorScheme="red"
-                variant="ghost"
-                onClick={handleCancel}
-              >
+              <Button colorScheme="red" variant="ghost" onClick={handleCancel}>
                 Cancel
               </Button>
             </Stack>
