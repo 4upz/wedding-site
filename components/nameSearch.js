@@ -1,5 +1,4 @@
 import {
-  Alert, AlertIcon,
   Box,
   Button,
   FormControl,
@@ -19,7 +18,10 @@ export default function NameSearch({ handleNameSearch }) {
       })
       .catch((error) => {
         console.log(error.response)
-        const errorMessage = error.response.status === 404 ? 'No invitation with that name was found.' : 'Something went wrong.'
+        const errorMessage =
+          error.response.status === 404
+            ? 'No invitation with that name was found.'
+            : 'Something went wrong.'
         actions.setErrors({ name: errorMessage })
       })
       .finally(() => {
@@ -58,10 +60,6 @@ export default function NameSearch({ handleNameSearch }) {
           >
             Find Invitation
           </Button>
-          <Alert status="warning" variant="subtle" rounded="lg" mt={6}>
-            <AlertIcon />
-            Deadline to RSVP is August 1st!
-          </Alert>
         </Box>
       )}
     </Formik>
