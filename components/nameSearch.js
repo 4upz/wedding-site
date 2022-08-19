@@ -1,5 +1,7 @@
 import {
   Box,
+  Text,
+  Container,
   Button,
   FormControl,
   FormErrorMessage,
@@ -33,33 +35,43 @@ export default function NameSearch({ handleNameSearch }) {
     <Formik initialValues={{ name: '' }} onSubmit={handleNameSubmit}>
       {({ isSubmitting }) => (
         <Box as={Form} maxW="1200px" w="100%">
-          <Field name="name" validate={validateName}>
-            {({ field, form }) => (
-              <FormControl isInvalid={form.errors.name && form.touched.name}>
-                <Input
-                  {...field}
-                  placeholder="Please enter your full name"
-                  textAlign="center"
-                  size="lg"
-                  variant="filled"
-                  type="text"
-                  id="name"
-                />
-                <FormErrorMessage justifyContent="center">
-                  {form.errors.name}
-                </FormErrorMessage>
-              </FormControl>
-            )}
-          </Field>
-          <Button
-            mt={6}
-            isLoading={isSubmitting}
-            type="submit"
-            colorScheme="yellow"
-            size="lg"
-          >
-            Find Invitation
-          </Button>
+          <Text fontStyle="italic">
+            Sorry, we are no longer accepting RSVPS.
+          </Text>
+          <Text mb={6}>
+            Please reach out to the bride or the groom for issues or questions.
+          </Text>
+          <Container display="none">
+            <Field name="name" validate={validateName}>
+              {({ field, form }) => (
+                <FormControl isInvalid={form.errors.name && form.touched.name}>
+                  <Input
+                    {...field}
+                    placeholder="Please enter your full name"
+                    textAlign="center"
+                    size="lg"
+                    variant="filled"
+                    type="text"
+                    id="name"
+                    disabled
+                  />
+                  <FormErrorMessage justifyContent="center">
+                    {form.errors.name}
+                  </FormErrorMessage>
+                </FormControl>
+              )}
+            </Field>
+            <Button
+              mt={6}
+              isLoading={isSubmitting}
+              type="submit"
+              colorScheme="yellow"
+              size="lg"
+              disabled
+            >
+              Find Invitation
+            </Button>
+          </Container>
         </Box>
       )}
     </Formik>

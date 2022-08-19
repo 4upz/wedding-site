@@ -1,4 +1,4 @@
-import admin from 'firebase-admin'
+const admin = require('firebase-admin')
 // import { getAnalytics } from 'firebase/analytics'
 
 const serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT_KEY)
@@ -15,4 +15,4 @@ if (!admin.apps.length) {
 
 // const analytics = getAnalytics(admin.apps[0])
 
-export default admin.firestore()
+module.exports = admin.firestore()
