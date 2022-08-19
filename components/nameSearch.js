@@ -36,7 +36,7 @@ export default function NameSearch({ handleNameSearch }) {
       {({ isSubmitting }) => (
         <Box as={Form} maxW="1200px" w="100%">
           <Text fontStyle="italic">
-            Sorry, we are no longer accepting RSVPS.
+            Sorry, we are no longer accepting RSVPs.
           </Text>
           <Text mb={6}>
             Please reach out to the bride or the groom for issues or questions.
